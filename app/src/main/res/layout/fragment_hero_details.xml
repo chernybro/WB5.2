@@ -41,6 +41,7 @@
         <TextView
             android:id="@+id/hero_name"
             android:layout_width="0dp"
+            android:textColor="?attr/colorPrimary"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -52,11 +53,13 @@
 
         <TextView
             android:id="@+id/tv_full_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/Theme.WB51.HeadlineSmall.TextAppearance"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
+            android:layout_marginEnd="@dimen/margin_huge"
             app:layout_constraintTop_toBottomOf="@id/hero_name"
+            app:layout_constraintEnd_toStartOf="@id/tv_appearance"
             tools:text="Ivan Ivanov" />
 
 
@@ -81,20 +84,22 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@id/tv_appearance"
             app:layout_constraintTop_toBottomOf="@id/tv_appearance"
-            tools:text="Publisher: DC Comics" />
+            android:text="@string/publisher_variant" />
 
         <TextView
             android:id="@+id/tv_place_of_birth"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
             android:paddingVertical="1dp"
             android:textAppearance="@style/Theme.WB51.BodyMedium.TextAppearance"
             android:textAlignment="center"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@id/tv_publisher"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@id/tv_appearance"
             app:layout_constraintTop_toBottomOf="@id/tv_publisher"
-            tools:text="Birth Place: Scarsdale, Arizona" />
+            android:text="@string/birth_place_variant" />
 
         <TextView
             android:id="@+id/tv_race"
@@ -107,7 +112,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@id/tv_appearance"
             app:layout_constraintTop_toBottomOf="@id/tv_place_of_birth"
-            tools:text="Race: Human" />
+            tools:text="@string/race_variant" />
 
         <TextView
             android:id="@+id/tv_height"
@@ -120,7 +125,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@id/tv_appearance"
             app:layout_constraintTop_toBottomOf="@id/tv_race"
-            tools:text="Height: 180cm" />
+            tools:text="@string/height_variant" />
 
         <TextView
             android:id="@+id/tv_weight"
@@ -133,12 +138,13 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@id/tv_appearance"
             app:layout_constraintTop_toBottomOf="@id/tv_height"
-            tools:text="Weight: 180cm" />
+            tools:text="@string/weight_variant" />
 
         <TextView
             android:id="@+id/tv_stats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimary"
             android:text="@string/stats_label"
             android:textAppearance="@style/Theme.WB51.HeadlineMedium.TextAppearance"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
@@ -165,7 +171,7 @@
             app:drawableLeftCompat="@drawable/ic_intelligence"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/tv_attributes"
-            tools:text="Intelligence: 19" />
+            tools:text="@string/intelligence_variant" />
 
         <TextView
             android:id="@+id/tv_strength_stats"
@@ -178,7 +184,7 @@
             app:drawableLeftCompat="@drawable/ic_strength"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/tv_intelligence_stats"
-            tools:text="Strength: 14" />
+            tools:text="@string/strength_variant" />
 
         <TextView
             android:id="@+id/tv_speed"
@@ -191,7 +197,7 @@
             app:drawableLeftCompat="@drawable/ic_speed"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/tv_strength_stats"
-            tools:text="Speed: 15" />
+            tools:text="@string/speed_variant" />
 
 
         <TextView
@@ -205,7 +211,7 @@
             app:drawableLeftCompat="@drawable/ic_durability"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/tv_speed"
-            tools:text="Durability: 15" />
+            tools:text="@string/durability_variant" />
 
         <TextView
             android:id="@+id/tv_power"
@@ -218,7 +224,7 @@
             app:drawableLeftCompat="@drawable/ic_sword"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/tv_durability"
-            tools:text="Power: 15" />
+            tools:text="@string/power_variant" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:textAppearance="@style/Theme.WB51.Toolbar.TitleTextAppearance"
-                android:text="@string/dota_heroes_label"
+                android:text="@string/heroes_label"
                 android:layout_gravity="center"
                 android:fontFamily="@font/kanit_light"
                 android:layout_height="wrap_content" />

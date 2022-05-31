@@ -37,7 +37,7 @@ class HeroesListAdapter : PagingDataAdapter<HeroItem ,HeroesListAdapter.HeroList
         fun bind(item: HeroItem) {
             itemHeroBinding.apply {
                 tvHeroName.text = item.name
-                Picasso.get().load(item.image).into(ivHeroImage)
+                Picasso.get().load(item.image).fit().centerCrop().into(ivHeroImage)
                 this.root.setOnClickListener{ heroClickHandler?.onItemClick(item) }
             }
         }

@@ -9,6 +9,4 @@ import retrofit2.http.Path
 interface HeroListApi {
     @GET("/api/${Constants.TOKEN}/{id}")
     suspend fun getHero(@Path("id") id: Int): HeroDTO
-
-    suspend fun getHeroDetails(id: Int) : HeroDetailsItem
 }

@@ -10,6 +10,7 @@ import com.chernybro.wb52.R
 import com.chernybro.wb52.databinding.FragmentHeroDetailsBinding
 import com.chernybro.wb52.presentation.BaseFragment
 import com.chernybro.wb52.presentation.hero_list_screen.MainActivity
+import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -36,21 +37,29 @@ class HeroDetailsFragment : Fragment(), BaseFragment {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        (activity as MainActivity).setToolbarTitle(arguments?.getString(KEY_HERO_NAME, getFragmentTitle()) ?: getFragmentTitle())
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        arguments?.getInt(KEY_HERO_ID)?.let { vm.getHeroDetails(it) }
-        (activity as MainActivity).setToolbarTitle(
-            arguments?.getString(
-                KEY_HERO_NAME,
-                getFragmentTitle()
-            ) ?: getFragmentTitle()
-        )
-
+        arguments?.getString(KEY_HERO_ID)?.let { vm.getHeroDetails(it.toInt()) }
         vm.heroDetails.observe(viewLifecycleOwner) { hero ->
             binding.apply {
-//                heroName.text = hero.name
-//                banner.load(hero.imageUrl)
-
+                heroName.text = hero.name
+                Picasso.get().load(hero.imageUrl).into(banner)
+                tvDurability.text = getString(R.string.durability_variant, hero.durability)
+                tvHeight.text = getString(R.string.height_variant, hero.height)
+                tvWeight.text = getString(R.string.weight_variant, hero.weight)
+                tvPower.text = getString(R.string.power_variant, hero.power)
+                tvIntelligenceStats.text = getString(R.string.intelligence_variant, hero.intelligence)
+                tvStrengthStats.text = getString(R.string.strength_variant, hero.strength)
+                tvPlaceOfBirth.text = getString(R.string.birth_place_variant, hero.birthPlace)
+                tvRace.text = getString(R.string.race_variant, hero.race)
+                tvFullName.text = hero.fullName
+                tvPublisher.text = getString(R.string.publisher_variant, hero.publisher)
+                tvSpeed.text = getString(R.string.speed_variant, hero.speed)
             }
         }
 

@@ -1,65 +1,19 @@
 package com.chernybro.wb52.domain.models
 
 data class HeroDetailsItem(
-    val id: Int,
+    val id: String,
     val name: String,
+    val publisher: String,
     val imageUrl: String,
-    val mana: HeroMana,
-    val health: HeroHealth,
-    val stats: HeroStats,
+    val intelligence: String,
+    val strength: String,
+    val speed: String,
+    val durability: String,
+    val power: String,
+    val birthPlace: String,
+    val height: String,
+    val weight: String,
+    val race: String,
+    val fullName: String
 )
 
-data class HeroStats(
-    val attributes: HeroAttributes,
-    val mobility: HeroMobility,
-    val attack: HeroAttack,
-    val defence: HeroDefence
-)
-
-data class HeroAttributes(
-    val agility: HeroAgility,
-    val intelligence: HeroIntelligence,
-    val strength: HeroStrength
-)
-
-data class HeroDefence(
-    val magicResistant: Int,
-    val armor: Double
-)
-
-data class HeroMobility(
-    val speed: Int
-)
-
-data class HeroAttack(
-    val max: Int,
-    val min: Int,
-    val rate: Double,
-    val range: Int,
-    val type: String
-)
-
-data class HeroHealth(
-    val baseValue: Int,
-    val regen: Double,
-)
-
-data class HeroMana(
-    val baseValue: Int,
-    val regen: Double,
-)
-
-data class HeroAgility(
-    val gain: Double,
-    val base: Int,
-)
-
-data class HeroIntelligence(
-    val gain: Double,
-    val base: Int,
-)
-
-data class HeroStrength(
-    val gain: Double,
-    val base: Int,
-)

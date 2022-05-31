@@ -84,6 +84,6 @@ class HeroesListFragment : Fragment(), BaseFragment {
     }
 
     override fun getFragmentTitle(): String {
-        return getString(R.string.dota_heroes_label)
+        return getString(R.string.heroes_label)
     }
 }
